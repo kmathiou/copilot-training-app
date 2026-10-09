@@ -1,0 +1,10 @@
+The application is available inside the cluster at:
+  http://{{ include "copilot-training-app.fullname" . }}:{{ .Values.service.port }}
+
+{{- if .Values.ingress.enabled }}
+Ingress is enabled. Configure DNS for the host(s) in your ingress values.
+{{- else }}
+To access it locally, forward the service port:
+  kubectl port-forward service/{{ include "copilot-training-app.fullname" . }} 8000:{{ .Values.service.port }}
+Then open http://127.0.0.1:8000
+{{- end }}

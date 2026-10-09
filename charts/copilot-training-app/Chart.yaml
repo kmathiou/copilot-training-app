@@ -1,0 +1,6 @@
+apiVersion: v2
+name: copilot-training-app
+description: Helm chart for the FastAPI training app
+type: application
+version: 0.1.0
+appVersion: "0.1.0"
